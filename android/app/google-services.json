@@ -1,0 +1,135 @@
+{
+  "project_info": {
+    "project_number": "878901864145",
+    "firebase_url": "https://umcarro-cd885-default-rtdb.firebaseio.com",
+    "project_id": "umcarro-cd885",
+    "storage_bucket": "umcarro-cd885.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878901864145:android:d4ecc6cb124402d2abc7f0",
+        "android_client_info": {
+          "package_name": "br.com.umcarrodriver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "878901864145-41gi1f2123mph7j36ijte3b4blsk3kft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWHQ_uZLhmm85cnXwwiowSjHwSH3qQ7UY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "878901864145-41gi1f2123mph7j36ijte3b4blsk3kft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878901864145:android:39e42a3f85552f99abc7f0",
+        "android_client_info": {
+          "package_name": "br.com.umcarrouser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "878901864145-41gi1f2123mph7j36ijte3b4blsk3kft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWHQ_uZLhmm85cnXwwiowSjHwSH3qQ7UY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "878901864145-41gi1f2123mph7j36ijte3b4blsk3kft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878901864145:android:fd3a6e306d5e609dabc7f0",
+        "android_client_info": {
+          "package_name": "com.umcarro.passageiro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "878901864145-41gi1f2123mph7j36ijte3b4blsk3kft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWHQ_uZLhmm85cnXwwiowSjHwSH3qQ7UY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "878901864145-41gi1f2123mph7j36ijte3b4blsk3kft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:878901864145:android:f511fb60124186f7abc7f0",
+        "android_client_info": {
+          "package_name": "com.umcarro.prestador"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "878901864145-76outfa51gop4lijf5j8mns2mmnhms24.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.umcarro.prestador",
+            "certificate_hash": "b3d1e0f5c954610aba395985ff9598c135ec1269"
+          }
+        },
+        {
+          "client_id": "878901864145-41gi1f2123mph7j36ijte3b4blsk3kft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWHQ_uZLhmm85cnXwwiowSjHwSH3qQ7UY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "878901864145-41gi1f2123mph7j36ijte3b4blsk3kft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
