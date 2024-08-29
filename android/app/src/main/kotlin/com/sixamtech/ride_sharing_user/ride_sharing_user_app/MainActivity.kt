@@ -1,4 +1,4 @@
-package com.sixamtech.hexaride
+package br.com.umcarrouser
 
 import io.flutter.embedding.android.FlutterActivity
 
