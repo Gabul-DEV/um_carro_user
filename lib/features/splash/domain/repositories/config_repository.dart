@@ -4,29 +4,33 @@ import 'package:ride_sharing_user_app/features/splash/domain/repositories/config
 import 'package:ride_sharing_user_app/util/app_constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class ConfigRepository implements ConfigRepositoryInterface{
+class ConfigRepository implements ConfigRepositoryInterface {
   final ApiClient apiClient;
   final SharedPreferences sharedPreferences;
-  const ConfigRepository({required this.apiClient, required this.sharedPreferences});
+  const ConfigRepository(
+      {required this.apiClient, required this.sharedPreferences});
 
   @override
-  Future<Response> getConfigData() {
-    return apiClient.getData(AppConstants.configUri);
+  Future<Response> getConfigData() async {
+    final response = await apiClient.getData(AppConstants.configUri);
+    return response;
   }
 
   @override
   Future<bool> initSharedData() {
-    if(!sharedPreferences.containsKey(AppConstants.theme)) {
+    if (!sharedPreferences.containsKey(AppConstants.theme)) {
       return sharedPreferences.setBool(AppConstants.theme, false);
     }
-    if(!sharedPreferences.containsKey(AppConstants.countryCode)) {
-      return sharedPreferences.setString(AppConstants.countryCode, AppConstants.languages[0].countryCode);
+    if (!sharedPreferences.containsKey(AppConstants.countryCode)) {
+      return sharedPreferences.setString(
+          AppConstants.countryCode, AppConstants.languages[0].countryCode);
     }
-    if(!sharedPreferences.containsKey(AppConstants.languageCode)) {
-      return sharedPreferences.setString(AppConstants.languageCode, AppConstants.languages[0].languageCode);
+    if (!sharedPreferences.containsKey(AppConstants.languageCode)) {
+      return sharedPreferences.setString(
+          AppConstants.languageCode, AppConstants.languages[0].languageCode);
     }
 
-    if(!sharedPreferences.containsKey(AppConstants.intro)) {
+    if (!sharedPreferences.containsKey(AppConstants.intro)) {
       sharedPreferences.setBool(AppConstants.intro, true);
     }
     return Future.value(true);
@@ -44,15 +48,14 @@ class ConfigRepository implements ConfigRepositoryInterface{
 
   @override
   bool? showIntro() {
-    if(!sharedPreferences.containsKey(AppConstants.intro)) {
+    if (!sharedPreferences.containsKey(AppConstants.intro)) {
       sharedPreferences.setBool(AppConstants.intro, true);
     }
     return sharedPreferences.getBool(AppConstants.intro);
-
   }
 
   @override
-  bool haveOngoingRides(){
+  bool haveOngoingRides() {
     return sharedPreferences.getBool(AppConstants.haveOngoingRides) ?? false;
   }
 
