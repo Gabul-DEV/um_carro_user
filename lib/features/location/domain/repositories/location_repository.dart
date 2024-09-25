@@ -3,16 +3,16 @@ import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:ride_sharing_user_app/data/api_client.dart';
+import 'package:ride_sharing_user_app/features/address/domain/models/address_model.dart';
 import 'package:ride_sharing_user_app/features/location/domain/repositories/location_repository_interface.dart';
 import 'package:ride_sharing_user_app/util/app_constants.dart';
-import 'package:ride_sharing_user_app/features/address/domain/models/address_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
-class LocationRepository implements LocationRepositoryInterface{
+class LocationRepository implements LocationRepositoryInterface {
   final ApiClient apiClient;
   final SharedPreferences sharedPreferences;
-  LocationRepository({required this.apiClient, required this.sharedPreferences});
+  LocationRepository(
+      {required this.apiClient, required this.sharedPreferences});
 
   @override
   Future<Response> getZone(String lat, String lng) async {
@@ -21,32 +21,39 @@ class LocationRepository implements LocationRepositoryInterface{
 
   @override
   Future<Response> getAddressFromGeocode(LatLng? latLng) async {
-    return await apiClient.getData('${AppConstants.geoCodeURI}?lat=${latLng!.latitude}&lng=${latLng.longitude}');
+    return await apiClient.getData(
+        '${AppConstants.geoCodeURI}?lat=${latLng!.latitude}&lng=${latLng.longitude}');
   }
 
   @override
   Future<Response> searchLocation(String text) async {
-    return await apiClient.getData('${AppConstants.searchLocationUri}?search_text=$text');
+    // return await apiClient.getData(
+    //     '${AppConstants.searchLocationUri}?search_text=${Uri.encodeComponent(text)}');
+    return await apiClient
+        .getData('${AppConstants.searchLocationUri}?search_text=$text');
   }
 
   @override
   Future<Response> getPlaceDetails(String placeID) async {
-    return await apiClient.getData('${AppConstants.placeApiDetails}?placeid=$placeID');
+    return await apiClient
+        .getData('${AppConstants.placeApiDetails}?placeid=$placeID');
   }
 
   @override
   Future<bool> saveUserAddress(Address? address) async {
     apiClient.updateHeader(
-      sharedPreferences.getString(AppConstants.token) ?? '', address,
+      sharedPreferences.getString(AppConstants.token) ?? '',
+      address,
     );
-    if(address == null) {
-      if(sharedPreferences.containsKey(AppConstants.userAddress)) {
+    if (address == null) {
+      if (sharedPreferences.containsKey(AppConstants.userAddress)) {
         return await sharedPreferences.remove(AppConstants.userAddress);
-      }else {
+      } else {
         return true;
       }
-    }else {
-      return await sharedPreferences.setString(AppConstants.userAddress, jsonEncode(address.toJson()));
+    } else {
+      return await sharedPreferences.setString(
+          AppConstants.userAddress, jsonEncode(address.toJson()));
     }
   }
 
@@ -84,5 +91,4 @@ class LocationRepository implements LocationRepositoryInterface{
     // TODO: implement update
     throw UnimplementedError();
   }
-
 }
